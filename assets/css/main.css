@@ -9,5 +9,18 @@
 /* @import './cmps/AppHeader.css';
 @import './cmps/PetFilter.css';
 @import './cmps/PetList.css';
-@import './cmps/PetPreview.css'; */ */
+@import './cmps/PetPreview.css'; */ 
+
+/* APPLICATIONS */
+@import '../../apps/Keep/assets/css/KeepApp.css';
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(139, 171, 230);
+}
 

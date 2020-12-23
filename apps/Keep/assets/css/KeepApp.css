@@ -1,10 +1,27 @@
-*{
-    box-sizing: border-box;
+
+
+
+.keep-app{
+ 
+    height: 800px;
+    text-align: center;
+    
 }
 
-body{
-    margin: 0;
-    height: 100vh;
-    background-color: rgb(139, 171, 230);
+.notes-list{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr;
+    grid-gap: 2rem;
 }
 
+.note-preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 100px;
+    width: 200px;
+    
+
+}
