@@ -1,10 +1,10 @@
-import { utilService } from './utilService.js';
-import { storageService } from './storageService.js';
+import { utilService } from '../../../services/utilService.js';
+import { storageService } from '../../../services/storageService.js';
 
 const KEY = 'mailDB';
 export const mailService = {
     query,
-    // remove,
+    remove,
     // save,
     // getById,
     // getNextPrevPet
@@ -15,12 +15,10 @@ _createMails();
 function _createMails() {
     gMails = _loadMailsFromStorage();
     if (!gMails || !gMails.length) {
-        // Nothing in localStorage, use demo data
         gMails = _getDemoMails()
         _saveMailsToStorage();
     }
 }
-
 
 function _loadMailsFromStorage() {
     storageService.load(KEY);
@@ -33,8 +31,8 @@ function _saveMailsToStorage() {
 function _getDemoMails() {
     const mails = [
         { id: 'i101', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt : 1551133930594 },
-        { id: 'i102',  subject: 'Sprint meeting', body: 'Pick up!', isRead: false, sentAt : 1551133930594 },
-        { id: 'i103',  subject: 'Good morning!', body: 'Pick up!', isRead: false, sentAt : 1551133930594 }
+        { id: 'i102',  subject: 'Sprint meeting', body: 'Pick up!', isRead: true, sentAt : 1551133930494 },
+        { id: 'i103',  subject: 'Good morning!', body: 'How are you today?', isRead: true, sentAt : 1551133930591 }
     ];
     return mails;
 }
@@ -43,11 +41,11 @@ function query() {
     return Promise.resolve(gMails);
 }
 
-// function remove(petId) {
-//     gMails = gMails.filter(pet => pet.id !== petId);
-//     _savePetsToStorage();
-//     return Promise.resolve();
-// }
+function remove(mailId) {
+    gMails = gMails.filter(mail => mail.id !== mailId);
+    _saveMailsToStorage();
+    return Promise.resolve();
+}
 
 // function getById(petId) {
 //     const pet = gMails.find(pet => pet.id === petId);
