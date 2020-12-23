@@ -1,0 +1,36 @@
+.app-header{
+    background-color: #fff;
+   
+   
+}
+
+ul{
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.clean-list {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.app-header li a{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 120px;
+    height: 80px;
+    cursor: pointer;
+}
+.app-header li a:hover {
+    background-color: rgb(147, 139, 230);
+    color: white;
+}

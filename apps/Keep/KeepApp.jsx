@@ -1,6 +1,7 @@
 import { keepService } from "./Services/keepService.js"
 import { KeepList } from "./cmps/KeepList.jsx";
-import { AddNote } from "./cmps/AddNote.jsx"
+import { EditNote } from "./cmps/EditNote.jsx"
+const { Link } = ReactRouterDOM;
 
 export class KeepApp extends React.Component {
 
@@ -22,6 +23,12 @@ export class KeepApp extends React.Component {
         // console.log('notes', this.state.notes)
     }
 
+    onRemoveNote = (noteId) => {
+        keepService.remove(noteId).then(() => {
+            this.loadNotes()
+        })
+    }
+
 
 
     render() {
@@ -29,9 +36,9 @@ export class KeepApp extends React.Component {
         console.log('notes', notes);
         return (
             <section className="keep-app">
-                <h1>Hello Keep!</h1>
-                <AddNote />
-                <KeepList notes={notes} />
+                <h2>My Noteskeeper</h2>
+                <Link className="btn" to="/keep/edit">Add Note</Link>
+                <KeepList notes={notes} onRemove={this.onRemoveNote} />
             </section>
         )
     }
