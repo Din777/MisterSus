@@ -1,7 +1,7 @@
 import { utilService } from '../../../Services/utilService.js'
 import { storageService } from '../../../Services/storageService.js'
 
-const KEY = 'notes'
+const KEY = 'notes';
 export const keepService = {
     query,
     remove,
@@ -15,12 +15,14 @@ function _createNotes() {
     gNotes = storageService.load(KEY)
     if (!gNotes || !gNotes.length) {
         gNotes = _getDemoNotes()
+        console.log('gNotes',gNotes);
         _saveNotesToStorage()
     }
 }
 
 function query() {
     return Promise.resolve(gNotes);
+    // return gNotes
 }
 
 function remove(noteId){
@@ -35,14 +37,15 @@ function getById(noteId){
 }
 
 function save(note){
-    if (note.id){
-        return _update(note);
-    } else {
-        return _add(note);
-    }
+    // if (note.id){
+    //     return _update(note);
+    // } else {
+    //     return _add(note);
+    // }
+    _add(note)
 }
 
-function _saveNotesToStorage() {
+function _saveNotesToStorage(gNotes=notes) {
     storageService.save(KEY, gNotes)
 }
 
@@ -87,17 +90,23 @@ function _getDemoNotes() {
         }
 
     ];
+    console.log('notes',notes);
     return notes;
 }
 
-function _add(notes){
+function _add(txt){
     const noteToAdd = {
         id: utilService.makeId(),
-        ...note
+        type: "NoteText",
+        isPinned: false,
+        info: {
+            txt: txt
+        }
     };
-    gNotes = [noteToAdd, ...gNotes];
-    _saveNotesToStorage();
-    return Promise.resolve(noteToAdd)
+    gNotes.push(noteToAdd)
+    console.log('gNotes',gNotes);
+    _saveNotesToStorage(gNotes);
+    // return Promise.resolve(noteToAdd)
 }
 
 function _update(note){
