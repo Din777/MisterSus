@@ -49,7 +49,9 @@ export class MailApp extends React.Component {
                 {/* <MailFilter setFilter={this.onSetFilter} /> */}
                 {/* <Link className="btn" to="/pet/edit">Add Pet</Link> */}
                 <h2>My Mails</h2>
+                <div className="mail-list">
                 <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
+                </div>
             </section>
         );
     }

@@ -13,6 +13,7 @@
 
 /* APPLICATIONS */
 @import '../../apps/Keep/assets/css/KeepApp.css';
+@import '../../apps/Mail/assets/css/MailApp.css';
 
 *{
     box-sizing: border-box;
