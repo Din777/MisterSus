@@ -13,6 +13,8 @@
 
 /* APPLICATIONS */
 @import '../../apps/Keep/assets/css/KeepApp.css';
+@import '../../assets/css/AppHeader.css';
+@import '../css/Home.css';
 
 *{
     box-sizing: border-box;
@@ -21,6 +23,8 @@
 body{
     margin: 0;
     height: 100vh;
-    background-color: rgb(139, 171, 230);
+    background-color: rgb(147, 139, 230);
 }
+
+
 

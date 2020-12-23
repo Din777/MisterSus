@@ -22,12 +22,11 @@ function _createNotes() {
 
 function query() {
     return Promise.resolve(gNotes);
-    // return gNotes
 }
 
 function remove(noteId){
     gNotes = gNotes.filter(note => note.id !== noteId);
-    _saveNotesToStorage();
+    _saveNotesToStorage(gNotes);
     return Promise.resolve();
 }
 
@@ -37,12 +36,12 @@ function getById(noteId){
 }
 
 function save(note){
-    // if (note.id){
-    //     return _update(note);
-    // } else {
-    //     return _add(note);
-    // }
-    _add(note)
+    if (note.id){
+        return _update(note);
+    } else {
+        return _add(note);
+    }
+    // _add(note)
 }
 
 function _saveNotesToStorage(gNotes=notes) {
@@ -111,13 +110,13 @@ function _add(txt){
 
 function _update(note){
     const noteToUpdate = {
-        ...noteToUpdate
+        ...note
     };
     const notesCopy = [...gNotes];
     const noteIdx = notesCopy.findIndex(note => note.id === note.id);
     notesCopy[noteIdx] = noteToUpdate;
     gNotes = notesCopy;
-    _saveNotesToStorage()
+    _saveNotesToStorage(gNotes)
     return Promise.resolve(noteToUpdate);
 }
 
