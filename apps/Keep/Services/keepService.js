@@ -41,10 +41,9 @@ function save(note){
     } else {
         return _add(note);
     }
-    // _add(note)
 }
 
-function _saveNotesToStorage(gNotes=notes) {
+function _saveNotesToStorage(gNotes) {
     storageService.save(KEY, gNotes)
 }
 
@@ -93,19 +92,16 @@ function _getDemoNotes() {
     return notes;
 }
 
-function _add(txt){
+function _add(note){
     const noteToAdd = {
+        ...note,
         id: utilService.makeId(),
-        type: "NoteText",
-        isPinned: false,
-        info: {
-            txt: txt
-        }
     };
-    gNotes.push(noteToAdd)
+    console.log('noteToAdd',noteToAdd )
+    gNotes = [noteToAdd, ...gNotes]
     console.log('gNotes',gNotes);
     _saveNotesToStorage(gNotes);
-    // return Promise.resolve(noteToAdd)
+    return Promise.resolve(noteToAdd)
 }
 
 function _update(note){
@@ -113,7 +109,7 @@ function _update(note){
         ...note
     };
     const notesCopy = [...gNotes];
-    const noteIdx = notesCopy.findIndex(note => note.id === note.id);
+    const noteIdx = notesCopy.findIndex(note => note.id === noteToUpdate.id);
     notesCopy[noteIdx] = noteToUpdate;
     gNotes = notesCopy;
     _saveNotesToStorage(gNotes)
