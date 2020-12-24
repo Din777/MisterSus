@@ -5,8 +5,8 @@ const KEY = 'mailDB';
 export const mailService = {
     query,
     remove,
-    // save,
-    // getById,
+    save,
+    getById,
     // getNextPrevPet
 };
 var gMails;
@@ -30,9 +30,9 @@ function _saveMailsToStorage() {
 
 function _getDemoMails() {
     const mails = [
-        { id: 'i101', subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt : 1551133930594 },
-        { id: 'i102',  subject: 'Sprint meeting', body: 'Pick up!', isRead: true, sentAt : 1551133930494 },
-        { id: 'i103',  subject: 'Good morning!', body: 'How are you today?', isRead: true, sentAt : 1551133930591 }
+        { id: 'i101', subject: 'Wassap?', body: 'Pick up!', from: 'Dina', isRead: false, sentAt : 1551133930594 },
+        { id: 'i102',  subject: 'Sprint meeting', body: 'Learn the definition documents and make a plan regarding the structure and working together.\n Create the following folder structure of the Appsus app!', from: 'Dina', isRead: true, sentAt : 1608801273428 },
+        { id: 'i103',  subject: 'Good morning!', body: 'How are you today?', from: 'Adi', isRead: true, sentAt : 1608701273428 }
     ];
     return mails;
 }
@@ -47,10 +47,40 @@ function remove(mailId) {
     return Promise.resolve();
 }
 
-// function getById(petId) {
-//     const pet = gMails.find(pet => pet.id === petId);
-//     return Promise.resolve(pet);
-// }
+function save(mail) {
+    if (mail.id) {
+        return _update(mail);
+    } else {
+        return _add(mail);
+    }
+}
+
+function _add(mail) {
+    const mailToAdd = {
+        id: utilService.makeId(),
+        ...mail
+    };
+    gMails = [mailToAdd, ...gMails];
+    _saveMailsToStorage();
+    return Promise.resolve(mailToAdd);
+}
+
+function _update(mail) {
+    const mailToUpdate = {
+        ...mail
+    };
+    const mailsCopy = [...gMails];
+    const mailIdx = mailsCopy.findIndex(mail => mail.id === mail.id);
+    mailsCopy[mailIdx] = mailToUpdate;
+    gMails = mailsCopy;
+    _saveMailsToStorage();
+    return Promise.resolve(mailToUpdate);
+}
+
+function getById(mailId) {
+    const mail = gMails.find(mail => mail.id === mailId);
+    return Promise.resolve(mail);
+}
 
 // function getNextPrevPet(petId) {
 //     return {
@@ -60,34 +90,6 @@ function remove(mailId) {
 // }
 
 
-// function save(pet) {
-//     if (pet.id) {
-//         return _update(pet);
-//     } else {
-//         return _add(pet);
-//     }
-// }
 
-// function _add(pet) {
-//     const petToAdd = {
-//         id: utilService.makeId(),
-//         ...pet
-//     };
-//     gMails = [petToAdd, ...gMails];
-//     _savePetsToStorage();
-//     return Promise.resolve(petToAdd);
-// }
-
-// function _update(pet) {
-//     const petToUpdate = {
-//         ...pet
-//     };
-//     const petsCopy = [...gMails];
-//     const petIdx = petsCopy.findIndex(pet => pet.id === pet.id);
-//     petsCopy[petIdx] = petToUpdate;
-//     gMails = petsCopy;
-//     _savePetsToStorage();
-//     return Promise.resolve(petToUpdate);
-// }
 
 
