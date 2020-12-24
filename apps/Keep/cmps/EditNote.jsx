@@ -44,7 +44,7 @@ export class EditNote extends React.Component {
         keepService.save(this.state.note)
             .then(note => {
                 console.log('changes saved',note);
-                this.props.history.push('/note')
+                this.props.history.push('/keep')
             })
     }
 

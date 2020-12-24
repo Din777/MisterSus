@@ -16,7 +16,7 @@ export class AppHeader extends React.Component {
         return <header className="app-header">
             <nav>
                 <ul className="clean-list">
-                    <li><NavLink activeClassName="my-active" exact-to="/">Home</NavLink></li>
+                    <li><NavLink activeClassName="my-active" exact to="/">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
                     <li><NavLink to="/mail">MisterMail</NavLink></li>
                     <li><NavLink to="/keep">MissKeep</NavLink></li>
