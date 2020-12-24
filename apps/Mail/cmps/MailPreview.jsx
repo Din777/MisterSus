@@ -24,6 +24,7 @@ export function MailPreview({ mail, onRemove }) {
 function convertDate(date) {
     var timestamp =date;
     var correctDate = new Date(timestamp);
+    return correctDate.toLocaleString();
     console.log(correctDate);
     // return correctDate;//it's a object/To Do: have to convert to normal date display. Make it a new compenent
 }

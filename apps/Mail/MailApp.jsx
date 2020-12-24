@@ -46,7 +46,7 @@ export class MailApp extends React.Component {
         const mailsForDisplay = this.getMailsForDisplay();
         return (
             <section className="mail-app">
-                <button className="add-btn" onClick={this.onAdd()}>➕<span> Compose</span></button>
+                <button className="add-btn" onClick={this.onAdd}>➕<span> Compose</span></button>
                 {/* <MailFilter setFilter={this.onSetFilter} /> */}
                 {/* <Link className="btn" to="/pet/edit">Add Pet</Link> */}
                 <h2>My Mails</h2>
@@ -58,7 +58,8 @@ export class MailApp extends React.Component {
     }
 
     onAdd(){
-        this.openModal()
+        // this.openModal()
+        console.log('hello');
 
     }
 }
