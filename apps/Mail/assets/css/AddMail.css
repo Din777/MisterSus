@@ -1,0 +1,49 @@
+.modal {
+    width: 1000px;
+    height: 400px;
+    background-color: white;
+    /* border: 3px solid blue; */
+}
+
+.modal h1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0 0;
+    background-color: rgb(20, 19, 19);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.modal .close-btn{
+    position: absolute;
+    left: 975px;
+    bottom: 425px;
+}
+
+.modal-tbl {
+    width: 1000px;
+    height: 400px;
+}
+
+.modal .modal-tbl > *{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    /* color: yellow; */
+}
+.modal td{
+    padding: 0 0 0 0;
+}
+.modal td input{
+    width: 940px;
+    /* padding-bottom: 0px;
+    padding-top: 0px; */
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    /* margin: 1em 0; */
+    background-color: white;
+    top: 0;
+  }

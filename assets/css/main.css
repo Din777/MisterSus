@@ -3,6 +3,7 @@
 
 @import '../../apps/Keep/assets/css/KeepApp.css';
 @import '../../apps/Mail/assets/css/MailApp.css';
+@import '../../apps/Mail/assets/css/AddMail.css';
 @import '../../assets/css/AppHeader.css';
 @import './About.css';
 @import '../css/Home.css';
