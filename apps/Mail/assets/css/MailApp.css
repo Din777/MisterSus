@@ -1,6 +1,6 @@
 .mail-list {
-   width: 900px;
-   height: 450px;
+   /* width: 900px; */
+   /* height: 450px; */
    background-color: rgb(194, 186, 186);
    border: 1px solid darkblue;
    /* font-size: 1.3em; */
@@ -9,7 +9,7 @@
 }
 
 .mail-preview {
-   border: 3px solid mediumorchid;
+   /* border: 3px solid mediumorchid; */
    /* display: flex; */
    /* font-size: 1.5em; */
    /* flex-direction: column; */
@@ -17,8 +17,28 @@
 
 .mail-preview h1 {
    font-size: 1.2em;
-   width: 850px;
-   height: 40px;
+   /* width: 850px; */
+   /* height: 40px; */
    border: 2px solid blue;
    background-color: lightgray;
+}
+
+.mail-preview a{
+   text-decoration: none;
+
+}
+
+.remove-btn {
+   font-size: 30px;
+   /* padding: */
+}
+
+.add-btn {
+   position: absolute;
+   top: 100px;
+   right: 0;
+}
+
+.add-btn span{
+   font-size: 17px;
 }
