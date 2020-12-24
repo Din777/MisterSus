@@ -8,12 +8,12 @@
    /* text-decoration: none; */
 }
 
-.mail-preview {
+/* .mail-preview {
    /* border: 3px solid mediumorchid; */
    /* display: flex; */
    /* font-size: 1.5em; */
-   /* flex-direction: column; */
-}
+   /* flex-direction: column;
+} */
 
 .mail-preview h1 {
    font-size: 1.2em;
