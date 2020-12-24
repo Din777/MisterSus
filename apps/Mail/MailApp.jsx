@@ -1,5 +1,6 @@
-import {mailService} from './services/mailService.js'
+import { mailService } from './services/mailService.js'
 import { MailList } from '../Mail/cmps/MailList.jsx'
+import { AddMail } from './cmps/AddMail.jsx'
 import { MailFilter } from '../Mail/cmps/MailFilter.jsx'
 const { Link } = ReactRouterDOM;
 
@@ -12,10 +13,11 @@ export class MailApp extends React.Component {
             unread: true,
             starred: false
         },
+        isNewMail: false
     }
 
     componentDidMount() {
-        this.loadMails(); 
+        this.loadMails();
     }
 
     loadMails = () => {
@@ -42,24 +44,27 @@ export class MailApp extends React.Component {
         this.setState({ filterBy });
     }
 
+    onToggleAddMail=()=> {
+        if (this.state.isNewMail) this.setState({isNewMail: false })
+        else this.setState({isNewMail: true })
+    }
+
     render() {
         const mailsForDisplay = this.getMailsForDisplay();
         return (
             <section className="mail-app">
-                <button className="add-btn" onClick={this.onAdd}>➕<span> Compose</span></button>
+                <button className="add-btn" onClick={this.onToggleAddMail}>➕<span> Compose</span></button>
                 {/* <MailFilter setFilter={this.onSetFilter} /> */}
                 {/* <Link className="btn" to="/pet/edit">Add Pet</Link> */}
                 <h2>My Mails</h2>
                 {/* <div className="mail-list"> */}
                 <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
                 {/* </div> */}
+                {this.state.isNewMail && <AddMail toggleAddMail={this.onToggleAddMail} />}
+                {/* {!this.state.isNewMail && <MailPreview />} */}
+                {/* {!this.state.isNewMail && <MailPreview toggleAddMail={this.onToggleAddMail} />} */}
+
             </section>
         );
-    }
-
-    onAdd(){
-        // this.openModal()
-        console.log('hello');
-
     }
 }

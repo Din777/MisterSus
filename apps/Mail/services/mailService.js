@@ -70,7 +70,7 @@ function _update(mail) {
         ...mail
     };
     const mailsCopy = [...gMails];
-    const mailIdx = mailsCopy.findIndex(mail => mail.id === mail.id);
+    const mailIdx = mailsCopy.findIndex(mail => mail.id === mailToUpdate.id);
     mailsCopy[mailIdx] = mailToUpdate;
     gMails = mailsCopy;
     _saveMailsToStorage();
