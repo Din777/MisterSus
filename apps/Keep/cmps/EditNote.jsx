@@ -4,11 +4,15 @@ export class EditNote extends React.Component {
 
     state = {
         note: {
-            type: "NoteText",
+            type: "",
             isPinned: false,
             info: {
                 txt: ''
+            },
+            style: {
+                backgroundColor: "#00d"
             }
+
         }
     }
 
@@ -17,7 +21,7 @@ export class EditNote extends React.Component {
 
     componentDidMount() {
      
-        const { noteId } = this.props.match.params;
+        const { noteId } = this.props.match.params
         // console.log('noteId', noteId);
         // console.log('this.refInput:', this.refInput);
         this.refInput.current.focus();

@@ -1,5 +1,8 @@
 .app-header{
-    background-color: #fff;
+    background-color: #df96a2;
+    /* background-color: rgb(147, 139, 230); */
+   
+    opacity: 0.6;
    
    
 }
@@ -29,8 +32,10 @@ ul{
     width: 120px;
     height: 80px;
     cursor: pointer;
+    color: white;
 }
 .app-header li a:hover {
-    background-color: rgb(147, 139, 230);
+    background-color: #853f6d;
     color: white;
+   
 }

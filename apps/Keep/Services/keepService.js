@@ -56,14 +56,18 @@ function _getDemoNotes() {
             isPinned: true,
             info: {
                 txt: "Fullstack Me Baby!"
+            },
+            style: {
+                backgroundColor: "#00d"
             }
         }, 
         {
             id: utilService.makeId(),
             type: "NoteImg",
+            isPinned: false,
             info: {
-                url: "./assets/img/world.jpg",
-                title: "Holding my imagination"
+                url: "./apps/Keep/assets/img/Foxy.jpeg",
+                title: "Foxy"
             },
             style: {
                 backgroundColor: "#00d"
@@ -72,10 +76,14 @@ function _getDemoNotes() {
         {
             id: utilService.makeId(),
             type: "NoteTodos",
+            isPinned: false,
             info: {
                 label: "How was it:", todos: [
                     { txt: "Do that", doneAt: null },
                     { txt: "Do this", doneAt: 187111111 }]
+            },
+            style: {
+                backgroundColor: "#00d"
             }
         },
         {
@@ -84,11 +92,14 @@ function _getDemoNotes() {
             isPinned: false,
             info: {
                 txt: "I contain multitudes"
+            },
+            style: {
+                backgroundColor: "#00d"
             }
         }
 
     ];
-    console.log('notes',notes);
+
     return notes;
 }
 
@@ -97,9 +108,7 @@ function _add(note){
         ...note,
         id: utilService.makeId(),
     };
-    console.log('noteToAdd',noteToAdd )
     gNotes = [noteToAdd, ...gNotes]
-    console.log('gNotes',gNotes);
     _saveNotesToStorage(gNotes);
     return Promise.resolve(noteToAdd)
 }

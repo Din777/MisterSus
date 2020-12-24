@@ -1,21 +1,17 @@
-
-
-
-.keep-app{
- 
+.keep-app {
     height: 800px;
     text-align: center;
-    
 }
 
-.notes-list{
+.notes-list {
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr;
-    grid-template-rows:  1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 2rem;
+
 }
 
-.note-preview{
+.note-preview {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +19,54 @@
     background-color: #fff;
     height: 100px;
     width: 200px;
-    
+}
 
+.note-txt {
+    background-color: #fff;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-todos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-todos {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.btn{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    margin-bottom: 2rem;
+}
+
+
+.note-img {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-img img {
+    width: 200px;
+    max-height: 300px;
+}
+
+a {
+    text-decoration: none;
 }

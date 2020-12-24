@@ -18,9 +18,6 @@ export class KeepApp extends React.Component {
         keepService.query().then(notes => {
             this.setState({ notes })
         })
-        // keepService.query()
-        // this.setState({notes: notes})
-        // console.log('notes', this.state.notes)
     }
 
     onRemoveNote = (noteId) => {
@@ -37,7 +34,7 @@ export class KeepApp extends React.Component {
         return (
             <section className="keep-app">
                 <h2>My Noteskeeper</h2>
-                <Link className="btn" to="/keep/edit">Add Note</Link>
+               <button className="btn"><Link  to="/keep/edit">Add Note</Link></button> 
                 <KeepList notes={notes} onRemove={this.onRemoveNote} />
             </section>
         )

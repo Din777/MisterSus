@@ -1,31 +1,50 @@
 
-/* @import '../../lib/animate.css';
-/* Basics */
-
-/* @import './basics/base.css';
-@import './basics/forms.css'; */
-
-/* Components: */
-/* @import './cmps/AppHeader.css';
-@import './cmps/PetFilter.css';
-@import './cmps/PetList.css';
-@import './cmps/PetPreview.css'; */ 
-
 /* APPLICATIONS */
+
 @import '../../apps/Keep/assets/css/KeepApp.css';
 @import '../../apps/Mail/assets/css/MailApp.css';
 @import '../../assets/css/AppHeader.css';
+@import './About.css';
 @import '../css/Home.css';
 
-*{
+/* HELPERS */
+
+.flex-align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+/* MAIN */
+
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     height: 100vh;
     background-color: rgb(147, 139, 230);
 }
-
-
-

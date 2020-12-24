@@ -1,0 +1,12 @@
+body{
+    color: #d9c8d2;
+  
+}
+
+.about-us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
