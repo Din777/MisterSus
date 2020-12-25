@@ -6,7 +6,11 @@ export function MailPreview({ mail, onRemove }) {
     return <article className="mail-preview">
         <Link to={`/mail/${mail.id}`}>
             <div className="mail-row">
-            <p>From: {mail.from}</p><p>Subject: {mail.subject}</p><p>Date:{convertDate(mail.sentAt)}</p><p>🗑</p>
+            <p>From: {mail.from}</p><p>Subject: {mail.subject}</p>
+            <p>Date: {convertDate(mail.sentAt)}</p>
+            <p onClick={() => {
+                onRemove(mail.id)
+            }}>🗑</p>
             </div>
         </Link>
         {/* <div> */}

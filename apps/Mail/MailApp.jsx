@@ -2,6 +2,7 @@ import { mailService } from './services/mailService.js'
 import { MailList } from '../Mail/cmps/MailList.jsx'
 import { AddMail } from './cmps/AddMail.jsx'
 import { MailFilter } from '../Mail/cmps/MailFilter.jsx'
+import { ControlPanel } from './cmps/ControlPanel.jsx'
 const { Link } = ReactRouterDOM;
 
 export class MailApp extends React.Component {
@@ -44,29 +45,33 @@ export class MailApp extends React.Component {
         this.setState({ filterBy });
     }
 
-    // addMail(){
-    //     addMailToView//service function
-    //     onToggleAddMail()
-    //     loadMails()
-    // }
+    onAddMail = () => {
+        console.log('enter onAddMail function');
+        // mailService.addMailToView()//service function
+        this.onToggleAddMail()
+        this.loadMails()
+    }
 
-    onToggleAddMail=()=> {
-        if (this.state.isNewMail) this.setState({isNewMail: false })
-        else this.setState({isNewMail: true })
+    onToggleAddMail = () => {
+        if (this.state.isNewMail) this.setState({ isNewMail: false })
+        else this.setState({ isNewMail: true })
     }
 
     render() {
         const mailsForDisplay = this.getMailsForDisplay();
         return (
             <section className="mail-app">
-                <button className="add-btn" onClick={this.onToggleAddMail}>➕<span> Compose</span></button>
+                <h2>My Mails</h2>
                 {/* <MailFilter setFilter={this.onSetFilter} /> */}
                 {/* <Link className="btn" to="/pet/edit">Add Pet</Link> */}
-                <h2>My Mails</h2>
-                {/* <div className="mail-list"> */}
-                <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
-                {/* </div> */}
-                {this.state.isNewMail && <AddMail toggleAddMail={this.onToggleAddMail} />}
+                <div className="common-container">
+                    <div className="side-container">
+                        <button className="add-btn" onClick={this.onToggleAddMail}>➕<span> Compose</span></button>
+                        <ControlPanel toggleAddMail={this.onToggleAddMail} />
+                    </div>
+                    <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
+                    {this.state.isNewMail && <AddMail toggleAddMail={this.onToggleAddMail} addMail={this.onAddMail} />}
+                </div>
                 {/* {!this.state.isNewMail && <MailPreview />} */}
                 {/* {!this.state.isNewMail && <MailPreview toggleAddMail={this.onToggleAddMail} />} */}
 

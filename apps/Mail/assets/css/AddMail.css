@@ -1,8 +1,9 @@
 .modal {
     width: 1000px;
     height: 460px;
-    background-color: white;
+    /* background-color: white; */
     color: black;
+    border: 2px solid black;
 }
 
 .modal h1 {
