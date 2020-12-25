@@ -6,7 +6,12 @@ export const keepService = {
     query,
     remove,
     getById,
-    save
+    getChangesToSave,
+   getNewNoteToAdd,
+   getNewNoteTemplate,
+   makeNoteFromTemplate,
+   getNotesForDisplay,
+   _add
 }
 var gNotes;
 _createNotes();
@@ -35,15 +40,67 @@ function getById(noteId){
     return Promise.resolve(note);
 }
 
-function save(note){
-    if (note.id){
-        return _update(note);
-    } else {
-        return _add(note);
+function makeNoteFromTemplate(type,value,isPinned,backgroundColor){
+    let note = {
+        type,
+        isPinned,
+        info: {
+            title: 'My title'
+        },
+        style: {
+            backgroundColor
+        }
+    }
+    let key;
+    switch (type) {
+        case 'NoteTxt':
+            key = 'txt'
+            break;
+        case 'NoteImg':
+            key = 'url'
+            break;
+        case 'NoteVideo':
+            key = 'url'
+            break;
+        case 'NoteTodos':
+            key = 'label'
+            note.info.todos = []
+            break;
+    }
+    note.info[[key]] = value;
+    _add(note)
+    return note
+}
+
+function getNewNoteTemplate(){
+    return {
+        type: 'NoteTxt',
+        isPinned: false,
+        info: {
+            title: 'Add Your Title'
+        },
+        style: {
+            backgroundColor: '#d8dde4'
+        }
     }
 }
 
-function _saveNotesToStorage(gNotes) {
+function getNewNoteToAdd(note){
+     _add(note)
+    
+}
+
+function getChangesToSave(note){
+   
+    _update(note)
+   
+}
+
+function getNotesForDisplay(){
+    return gNotes
+}
+
+function _saveNotesToStorage() {
     storageService.save(KEY, gNotes)
 }
 
@@ -52,14 +109,16 @@ function _getDemoNotes() {
     const notes = [
         {
             id: utilService.makeId(),
-            type: "NoteText",
+            type: "NoteTxt",
             isPinned: true,
             info: {
+                title: "Baby steps",
                 txt: "Fullstack Me Baby!"
             },
             style: {
                 backgroundColor: "#00d"
-            }
+            },
+            placeholder: ''
         }, 
         {
             id: utilService.makeId(),
@@ -71,31 +130,37 @@ function _getDemoNotes() {
             },
             style: {
                 backgroundColor: "#00d"
-            }
+            },
+            placeholder: ''
         },
         {
             id: utilService.makeId(),
             type: "NoteTodos",
             isPinned: false,
             info: {
-                label: "How was it:", todos: [
+                title: "my todo list",
+                label: "How was it:", 
+                todos: [
                     { txt: "Do that", doneAt: null },
                     { txt: "Do this", doneAt: 187111111 }]
             },
             style: {
                 backgroundColor: "#00d"
-            }
+            },
+            placeholder: ''
         },
         {
             id: utilService.makeId(),
-            type:"NoteText",
+            type:"NoteTxt",
             isPinned: false,
             info: {
+                title: "Poetry",
                 txt: "I contain multitudes"
             },
             style: {
                 backgroundColor: "#00d"
-            }
+            },
+            placeholder: ''
         },
         {
             id: utilService.makeId(),
@@ -107,7 +172,8 @@ function _getDemoNotes() {
             },
             style: {
                 backgroundColor: "#00d"
-            }
+            },
+            placeholder: ''
         }
 
     ];
@@ -121,7 +187,7 @@ function _add(note){
         id: utilService.makeId(),
     };
     gNotes = [noteToAdd, ...gNotes]
-    _saveNotesToStorage(gNotes);
+    _saveNotesToStorage();
     return Promise.resolve(noteToAdd)
 }
 

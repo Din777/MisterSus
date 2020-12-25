@@ -8,10 +8,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 2rem;
-
+    
 }
 
-.note-preview {
+/* .note-preview {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,15 +19,17 @@
     background-color: #fff;
     height: 100px;
     width: 200px;
-}
+} */
 
 .note-txt {
-    background-color: #fff;
+    background-color: #d8dde4;
+    border: 2px solid #4e2d69;
     width: 200px;
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #4e2d69;
 }
 
 .list-todos {
@@ -38,35 +40,68 @@
 }
 
 .note-todos {
-    background-color: #fff;
+    background-color: #d8dde4;
+    border: 2px solid #4e2d69;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #4e2d69;
 }
 
-
-.btn{
+.btn {
     width: 80px;
     height: 80px;
     background-color: #fff;
     margin-bottom: 2rem;
 }
 
-
 .note-img {
-    background-color: #fff;
+    background-color: #d8dde4;
+    border: 2px solid #4e2d69;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    color: #4e2d69;
 }
 
 .note-img img {
     width: 200px;
     max-height: 300px;
+    padding: 2rem;
+}
+
+.note-video{
+    background-color: #d8dde4;
+    border: 2px solid #4e2d69;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #4e2d69;
+    padding: 2rem;
+
 }
 
 a {
     text-decoration: none;
+}
+
+.add-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #c8c09f;
+}
+
+.note-input {
+    height: 40px;
+    width: 400px;
+}
+
+.btn-type img {
+    height: 31px;
+    width: 31px;
 }

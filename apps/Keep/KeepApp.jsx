@@ -1,6 +1,7 @@
 import { keepService } from "./Services/keepService.js"
 import { KeepList } from "./cmps/KeepList.jsx";
 import { EditNote } from "./cmps/EditNote.jsx"
+import { AddNote } from "./cmps/AddNote.jsx";
 const { Link } = ReactRouterDOM;
 
 export class KeepApp extends React.Component {
@@ -26,6 +27,13 @@ export class KeepApp extends React.Component {
         })
     }
 
+    addKeep = (note) => {
+        if (!note) return;
+        keepService.makeNoteFromTemplate(note)
+            .then(() => {
+                this.loadNotes()
+            })
+    }
 
 
     render() {
@@ -34,7 +42,7 @@ export class KeepApp extends React.Component {
         return (
             <section className="keep-app">
                 <h2>My Noteskeeper</h2>
-               <button className="btn"><Link  to="/keep/add">Add Note</Link></button> 
+                <AddNote onAddKeep={this.addKeep} />
                 <KeepList notes={notes} onRemove={this.onRemoveNote} />
             </section>
         )
