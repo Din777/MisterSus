@@ -1,8 +1,8 @@
 .modal {
     width: 1000px;
-    height: 400px;
+    height: 460px;
     background-color: white;
-    /* border: 3px solid blue; */
+    color: black;
 }
 
 .modal h1 {
@@ -14,7 +14,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.modal .close-btn{
+.modal .close-btn {
     position: absolute;
     left: 975px;
     bottom: 425px;
@@ -25,25 +25,30 @@
     height: 400px;
 }
 
-.modal .modal-tbl > *{
+.modal .modal-tbl>* {
     padding-top: 0px;
     padding-bottom: 0px;
-    /* color: yellow; */
 }
-.modal td{
+
+.modal td {
     padding: 0 0 0 0;
 }
-.modal td input{
+
+.modal td input {
     width: 940px;
     /* padding-bottom: 0px;
     padding-top: 0px; */
 }
 
-pre {
-    display: block;
-    font-family: monospace;
-    white-space: pre;
-    /* margin: 1em 0; */
-    background-color: white;
-    top: 0;
-  }
+textarea {
+    width: 940px;
+    height: 250px;
+}
+
+.send-btn{
+    background-color: #df96a2;
+    font-size: 18px;
+    position: absolute;
+    left:938px;
+    border-radius: 5px;
+}

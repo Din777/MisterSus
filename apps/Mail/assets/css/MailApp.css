@@ -1,36 +1,46 @@
 .mail-list {
-   /* width: 900px; */
-   /* height: 450px; */
-   background-color: rgb(194, 186, 186);
+   width: 1000px;
+   height: 460px;
+   background-color: lightgray;
    border: 1px solid darkblue;
    /* font-size: 1.3em; */
    /* text-align: center; */
    /* text-decoration: none; */
 }
+   
 
-/* .mail-preview {
-   /* border: 3px solid mediumorchid; */
-   /* display: flex; */
-   /* font-size: 1.5em; */
-   /* flex-direction: column;
-} */
-
-.mail-preview h1 {
+.mail-preview p {
+   margin: 0 0;
+   color: black;
    font-size: 1.2em;
-   /* width: 850px; */
-   /* height: 40px; */
-   border: 2px solid blue;
-   background-color: lightgray;
 }
 
-.mail-preview a{
+.mail-preview a {
    text-decoration: none;
+}
 
+/* .mail-preview span{
+   color: black;
+   position: absolute;
+   top: 176px;
+   left: 960px;
+} */
+
+.mail-row {
+   display: flex;
+   justify-content: space-between;
+   /* align-items: start; */
+   /* border-bottom: black; */
+   /* text-align: left; */
 }
 
 .remove-btn {
-   font-size: 30px;
-   /* padding: */
+   font-size: 22px;
+   /* height: 0; */
+   border: none;
+   position: absolute;
+   /* top: 176px; */
+   left: 960px;
 }
 
 .add-btn {
@@ -39,6 +49,6 @@
    right: 0;
 }
 
-.add-btn span{
+.add-btn span {
    font-size: 17px;
 }

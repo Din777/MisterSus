@@ -1,5 +1,5 @@
 
-export function AddMail({toggleAddMail}) {
+export function AddMail({ toggleAddMail }) {
 
     return (
         <div className="modal">
@@ -9,24 +9,27 @@ export function AddMail({toggleAddMail}) {
                 <tbody>
                     <tr>
                         <td><label htmlFor="email">To:</label></td>
-                        <td><input type="email" name="email" required /></td>
+                        <td><input type="email" name="email" autoComplete ="off" required /></td>
                     </tr>
                     <tr>
                         <td><label htmlFor="email">Cc:</label></td>
-                        <td><input type="email" name="email" /></td>
+                        <td><input type="email" name="email" autoComplete ="off"/></td>
                     </tr>
                     <tr>
                         <td><label htmlFor="email">Bcc:</label></td>
-                        <td><input type="email" name="email" /></td>
+                        <td><input type="email" name="email" autoComplete ="off"/></td>
                     </tr>
                     <tr>
-                        <td><label htmlFor="name">Subject:</label></td>
-                        <td><input type="text" id="name" name="name" placeholder="" required /></td>
+                        <td><label htmlFor="subject">Subject:</label></td>
+                        <td><input type="text" id="name" name="name" placeholder="" required autoComplete ="off"/></td>
                     </tr>
-                    {/* <input type="text" /> */}
+                    <tr>
+                    <td><label htmlFor="comment">:</label></td>
+                        <textarea name="comment" form="usrform"></textarea>
+                    </tr>
                 </tbody>
+                <button className="send-btn" onClick={toggleAddMail}>Send</button>
             </table>
-            <pre>Enter a text.....</pre>
         </div>
     );
 

@@ -44,6 +44,12 @@ export class MailApp extends React.Component {
         this.setState({ filterBy });
     }
 
+    // addMail(){
+    //     addMailToView//service function
+    //     onToggleAddMail()
+    //     loadMails()
+    // }
+
     onToggleAddMail=()=> {
         if (this.state.isNewMail) this.setState({isNewMail: false })
         else this.setState({isNewMail: true })
