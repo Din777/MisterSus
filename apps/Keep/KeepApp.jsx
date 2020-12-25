@@ -34,7 +34,7 @@ export class KeepApp extends React.Component {
         return (
             <section className="keep-app">
                 <h2>My Noteskeeper</h2>
-               <button className="btn"><Link  to="/keep/edit">Add Note</Link></button> 
+               <button className="btn"><Link  to="/keep/add">Add Note</Link></button> 
                 <KeepList notes={notes} onRemove={this.onRemoveNote} />
             </section>
         )

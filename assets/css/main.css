@@ -45,7 +45,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background-color: rgb(147, 139, 230);
+    /* background-color: rgb(147, 139, 230); */
 }
 
 button:hover {

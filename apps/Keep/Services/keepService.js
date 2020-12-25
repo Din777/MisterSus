@@ -96,6 +96,18 @@ function _getDemoNotes() {
             style: {
                 backgroundColor: "#00d"
             }
+        },
+        {
+            id: utilService.makeId(),
+            type: "NoteVideo",
+            isPinned: false,
+            info: {
+                url: "https://www.youtube.com/embed/WVyqh5MM7sA",
+                title: "Halloween"
+            },
+            style: {
+                backgroundColor: "#00d"
+            }
         }
 
     ];

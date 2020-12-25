@@ -1,7 +1,6 @@
 body{
-    background-image: url('/assets/img/world-big.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;    
+  margin: 0;
+  
 }
 
 .home-page{
@@ -10,6 +9,9 @@ body{
     align-items: center;
     flex-direction: column;
     color: lavender;
-   
+    background-image: url('/assets/img/world-big.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;  
+    height: 100vh;  
 }
 
