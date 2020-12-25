@@ -16,14 +16,14 @@ export function KeepPreview({ note }) {
     // }
 
     switch (note.type) {
-        case "NoteText":
-            return <Link to={`/keep/edit/$${note.id}`}><NoteTxt note={note} /></Link>
+        case "NoteTxt":
+            return <Link to={`/keep/edit/${note.id}`}><NoteTxt note={note} /></Link>
         case "NoteImg":
-            return <Link to={`/keep/edit/$${note.id}`}><NoteImg note={note} /></Link>
+            return <Link to={`/keep/edit/${note.id}`}><NoteImg note={note} /></Link>
         case "NoteTodos":
-            return <Link to={`/keep/edit/$${note.id}`}><NoteTodos note={note} /></Link>
+            return <Link to={`/keep/edit/${note.id}`}><NoteTodos note={note} /></Link>
         case "NoteVideo":
-            return <Link to={`/keep/edit/$${note.id}`}><NoteVideo note={note} /></Link>
+            return <Link to={`/keep/edit/${note.id}`}><NoteVideo note={note} /></Link>
         default:
             return <h2>must've crossed wires under the ocean....</h2>
     }
