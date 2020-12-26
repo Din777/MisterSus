@@ -1,6 +1,8 @@
 .keep-app {
     height: 800px;
     text-align: center;
+    /* background-color: #853f6d; */
+    height: 100vh;
 }
 
 .notes-list {
@@ -8,25 +10,16 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 2rem;
+    /* background-color: #853f6d; */
     
 }
 
-/* .note-preview {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    height: 100px;
-    width: 200px;
-} */
-
 .note-txt {
-    background-color: #d8dde4;
-    border: 2px solid #4e2d69;
+  
     width: 200px;
     height: 200px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #4e2d69;
@@ -39,9 +32,17 @@
     align-items: center;
 }
 
-.note-todos {
-    background-color: #d8dde4;
+.note-item{
+    /* background-color: #d8dde4; */
     border: 2px solid #4e2d69;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-todos {
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +58,7 @@
 }
 
 .note-img {
-    background-color: #d8dde4;
-    border: 2px solid #4e2d69;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -73,8 +73,7 @@
 }
 
 .note-video{
-    background-color: #d8dde4;
-    border: 2px solid #4e2d69;
+  
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -93,7 +92,7 @@ a {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    background-color: #c8c09f;
+    background-color: #f5c5c5;
 }
 
 .note-input {
@@ -102,6 +101,67 @@ a {
 }
 
 .btn-type img {
-    height: 31px;
-    width: 31px;
+    height: 60px;
+    width: 60px;
+}
+
+.btn-type .fas {
+    height: 60px;
+    width: 60px;
+    font-size: 1.6rem;
+} 
+.fas{
+    font-size: 1.6rem;
+    border: none;
+    background-color: transparent;
+}
+
+.far{
+    font-size: 1.6rem;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-type .far {
+    height: 60px;
+    width: 60px;
+    font-size: 1.6rem;
+} 
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pin {
+    color: #f5c5c5
+    /* background-color: #f5c5c5; */
+}
+
+ .unpin {
+    color: #191b1b;
+}
+
+.btn-link a{
+    font-size: 1.4rem;
+    color: black;
+    /* border: 1px solid black; */
+    padding: 0.1rem;
+}
+
+.btn-link a:hover{
+    background-color: #f5c5c5;
+}
+
+
+.color-palette {
+    display: flex;
+}
+
+.input-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
 }

@@ -8,6 +8,8 @@
 @import '../css/Home.css';
 /* HELPERS */
 
+
+
 .flex-align-center {
     display: flex;
     justify-content: center;
@@ -34,6 +36,27 @@
 
 .space-around {
     justify-content: space-around;
+}
+
+/* FONTS */
+
+@font-face{
+    font-family: Monoton;
+    src:url(../fonts/Monoton/Monoton-Regular.ttf)
+}
+
+@font-face{
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Black.ttf);
+}
+@font-face{
+    font-family: Lato;
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face{
+    font-family: Bungee_Shade;
+    src: url(../fonts/Bungee_Shade/BungeeShade-Regular.ttf);
 }
 
 /* MAIN */

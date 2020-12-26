@@ -1,5 +1,7 @@
 body{
-    color: #d9c8d2;
+    color: #4e2d69;
+    background-color: #d9c8d2;
+    
   
 }
 
@@ -9,4 +11,15 @@ body{
     justify-content: center;
     align-items: center;
     margin: 2rem;
+}
+
+h2{
+    font-family: Monoton;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.05rem;
+}
+
+p{
+    text-align: center;
+    font-family: Lato;
 }
