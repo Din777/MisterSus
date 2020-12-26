@@ -1,16 +1,20 @@
-body{
+/* body{
     color: #4e2d69;
     background-color: #d9c8d2;
     
   
-}
+} */
 
 .about-us{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
+    /* */
+    height: 100vh;
+    background-color: #e7cbf5;
+    color: rgb(85, 72, 96);
+
 }
 
 h2{
@@ -22,4 +26,17 @@ h2{
 p{
     text-align: center;
     font-family: Lato;
+    margin: 2rem; 
+}
+
+.img-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.img-container img{
+    width: 200px;
+    border: 2px solid rgb(85, 72, 96);
 }

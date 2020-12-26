@@ -1,4 +1,18 @@
+body{
+   background-color: #e7cbf5;
+  
+}
 
+.mail-app{
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   flex-direction: column;
+  color: rgb(85, 72, 96);
+   margin-left: 5rem;
+   margin-right: 5rem;
+   font-family: Roboto;
+}
 .mail-app h2{
    text-align: center;
    margin-top: 0;
@@ -7,6 +21,7 @@
 .mail-list {
    width: 1000px;
    height: 460px;
+   font-family: Lato-Regular;
    /* background-color: white; */
    /* border: 1px solid darkblue; */
    /* font-size: 1.3em; */
@@ -16,7 +31,7 @@
 
 .mail-preview p {
    margin: 0 0;
-   color: black;
+   /* color: black; */
 }
 
 .mail-preview a {
@@ -29,7 +44,8 @@
    border-bottom: 1px solid lightgray;
    padding-top: 5px;
    padding-bottom: 5px;
-   color: black;
+   color: rgb(35, 29, 40);
+   /* color: black; */
 }
 
 .remove-btn {
@@ -42,19 +58,22 @@
    display: flex;
    max-width: 1250px;
    height: 800px;
-   margin-left: 700px;
+   /* margin-left: 700px; */
    background-color: rgba(255, 255, 255, 0.459);
    color: black;
-   font-size: 1.4em;
+   font-size: 1rem;
+   /* */
 }
 
-.add-btn {
-   font-size: 1.25rem;
-}
 
 .side-container {
    width: 210px;
    margin-left: 15px;
+   display: flex;
+   font-weight: 700;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: Roboto; 
 }
 
 .side-container tr:hover {
@@ -63,6 +82,7 @@
 
 table {
    margin-top: 5px;
+   font-size: 1rem;
 }
 
 .unclicked {
@@ -70,13 +90,16 @@ table {
 }
 
 .clicked {
-   background-color: #8f384d;
+   /* background-color: #e7cbf5; */
+   background-color: #deb3f4;
 }
 
 .add-btn {
-   background-color: #8f384d;
+    background-color: #784f83;
+   color: rgb(234, 225, 247);
    border-radius: 10px;
    margin-top: 10px;
+   font-size: 1rem;
 }
 
 .read {
@@ -84,5 +107,6 @@ table {
 }
 
 .unread {
+   font-family: Lato-Bold;
    font-weight: 600;
 }
