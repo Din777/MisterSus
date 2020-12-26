@@ -4,37 +4,56 @@ import { NoteTodos } from './NoteTodos.jsx'
 import { NoteVideo } from './NoteVideo.jsx'
 const { Link } = ReactRouterDOM;
 
-export function KeepPreview({ note }) {
+export function KeepPreview({ note, onRemove, onTogglePin }) {
 
-
-    // componentDidMount() {
-    //     const { noteId } = this.props.match.params
-    //     if (!noteId) return;
-    //     keepService.getById(noteId).then(note => {
-    //         this.setState({ note })
-    //     })
-    // }
 
     switch (note.type) {
         case "NoteTxt":
-            return <Link to={`/keep/edit/${note.id}`}><NoteTxt note={note} /></Link>
+            return <article className="note-item">
+                <NoteTxt note={note} />
+                <div className="btn-container">
+                    <div className="btn-link"><Link to={`/keep/edit/${note.id}`}>Edit</Link></div>
+                    <button className={`fas fa-thumbtack ' ${note.isPinned ? 'pin' : 'unpin'}`} name="pin-note" onClick={() => onTogglePin(note.id)} ></button>
+                    <button className="fas fa-trash-alt" onClick={() => {
+                        onRemove(note.id)
+                    }}></button>
+                </div>
+            </article>
         case "NoteImg":
-            return <Link to={`/keep/edit/${note.id}`}><NoteImg note={note} /></Link>
+            return <article className="note-item">
+                <NoteImg note={note} />
+                <div className="btn-container">
+                    <div className="btn-link"><Link to={`/keep/edit/${note.id}`}>Edit</Link></div>
+                    <button className={`fas fa-thumbtack ' ${note.isPinned ? 'pin' : 'unpin'}`} name="pin-note" onClick={() => onTogglePin(note.id)} ></button>
+                    <button className="fas fa-trash-alt" onClick={() => {
+                        onRemove(note.id)
+                    }}></button>
+                </div>
+            </article>
         case "NoteTodos":
-            return <Link to={`/keep/edit/${note.id}`}><NoteTodos note={note} /></Link>
+            return <article className="note-item">
+                <NoteTodos note={note} />
+                <div className="btn-container">
+                    <div className="btn-link"><Link to={`/keep/edit/${note.id}`}>Edit</Link></div>
+                    <button className={`fas fa-thumbtack ' ${note.isPinned ? 'pin' : 'unpin'}`} name="pin-note" onClick={() => onTogglePin(note.id)} ></button>
+                    <button className="fas fa-trash-alt" onClick={() => {
+                        onRemove(note.id)
+                    }}></button>
+                </div>
+            </article>
         case "NoteVideo":
-            return <Link to={`/keep/edit/${note.id}`}><NoteVideo note={note} /></Link>
+            return <article className="note-item">
+                <NoteVideo note={note} />
+                <div className="btn-container">
+                    <div className="btn-link"><Link to={`/keep/edit/${note.id}`}>Edit</Link></div>
+                    <button className={`fas fa-thumbtack ' ${note.isPinned ? 'pin' : 'unpin'}`} name="pin-note" onClick={() => onTogglePin(note.id)} ></button>
+                    <button className="fas fa-trash-alt" onClick={() => {
+                        onRemove(note.id)
+                    }}></button>
+                </div>
+            </article>
         default:
             return <h2>must've crossed wires under the ocean....</h2>
     }
-
-        // return (<article className="note-preview">
-        //     <h4>{note.info.txt}</h4>
-        //     <Link to={`/keep/edit/${note.id}`}>Edit Note</Link>
-        //     <button onClick={() => {
-        //         onRemove(note.id)
-        //     }}>Remove</button>
-        // </article>)
-    
 
 }
