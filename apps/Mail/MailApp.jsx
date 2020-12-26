@@ -47,6 +47,7 @@ export class MailApp extends React.Component {
 
     onAddMail = () => {
         console.log('enter onAddMail function');
+        // console.log('mail',mail.target);
         // mailService.addMailToView()//service function
         this.onToggleAddMail()
         this.loadMails()
@@ -72,9 +73,6 @@ export class MailApp extends React.Component {
                     <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
                     {this.state.isNewMail && <AddMail toggleAddMail={this.onToggleAddMail} addMail={this.onAddMail} />}
                 </div>
-                {/* {!this.state.isNewMail && <MailPreview />} */}
-                {/* {!this.state.isNewMail && <MailPreview toggleAddMail={this.onToggleAddMail} />} */}
-
             </section>
         );
     }

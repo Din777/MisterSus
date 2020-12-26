@@ -1,12 +1,8 @@
-body{
+body {
    background-color: #8f384d;
 }
 
-.mail-app{
-/* background-color: #8f384d; */
-}
-
-.mail-app h2{
+.mail-app h2 {
    text-align: center;
    margin-top: 0;
 }
@@ -30,52 +26,66 @@ body{
    text-decoration: none;
 }
 
-/* .mail-preview span{
-   color: black;
-   position: absolute;
-   top: 176px;
-   left: 960px;
-} */
-
 .mail-row {
    display: flex;
    justify-content: space-between;
    border-bottom: 1px solid lightgray;
    padding-top: 5px;
    padding-bottom: 5px;
-   /* align-items: start; */
-   /* text-align: left; */
+   color: black;
 }
 
 .remove-btn {
-   font-size: 22px;
-   /* height: 0; */
    border: none;
    position: absolute;
-   /* top: 176px; */
    left: 960px;
-}
-
-.add-btn span {
-   font-size: 17px;
 }
 
 .common-container {
    display: flex;
-   margin-left: 400px;
-   margin-right: 400px;
+   max-width: 1250px;
+   height: 800px;
+   margin-left: 700px;
    background-color: rgba(255, 255, 255, 0.459);
    color: black;
-   font-size: 1.2em;
+   font-size: 1.4em;
+}
 
+.add-btn {
+   font-size: 1.25rem;
 }
 
 .side-container {
-   width: 180px;
+   width: 210px;
+   margin-left: 15px;
+}
+
+.side-container tr:hover {
+   cursor: pointer;
+}
+
+table {
+   margin-top: 5px;
+}
+
+.unclicked {
+   background-color: none;
+}
+
+.clicked {
+   background-color: #8f384d;
 }
 
 .add-btn {
    background-color: #8f384d;
    border-radius: 10px;
    margin-top: 10px;
+}
+
+.read {
+   font-weight: 400;
+}
+
+.unread {
+   font-weight: 600;
 }

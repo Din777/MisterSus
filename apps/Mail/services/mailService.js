@@ -6,9 +6,10 @@ export const mailService = {
     query,
     remove,
     save,
+    add,
     getById,
-    // getNextPrevPet
 };
+
 var gMails;
 _createMails();
 
@@ -30,10 +31,10 @@ function _saveMailsToStorage() {
 
 function _getDemoMails() {
     const mails = [
-        { id: 'i101', subject: 'HaLayla od tzair', body: '', from: 'Adi', isRead: false, sentAt : 1608901373428 },
-        { id: 'i102',  subject: 'Sprint meeting', body: 'Learn the definition documents and make a plan regarding the structure and working together.\n Create the following folder structure of the Appsus app!', from: 'Dina', isRead: true, sentAt : 1608801273428 },
-        { id: 'i103',  subject: 'Good morning!', body: 'How are you today?', from: 'Adi', isRead: true, sentAt : 1608701273428 },
-        { id: 'i104',  subject: 'Wassap?', body: 'Pick up!', from: 'Dina', isRead: true, sentAt : 1551133930594 }
+        { id: 'i101', subject: 'HaLayla od tzair', body: '', from: 'Dina', isRead: false, sentAt : 1608901373428 },
+        { id: 'i102',  subject: 'Sprint meeting', body: 'Learn the definition documents and make a plan regarding the structure and working together.\n Create the following folder structure of the Appsus app!', from: 'Dina', isRead: false, sentAt : 1608801273428 },
+        { id: 'i103',  subject: 'Good morning!', body: 'How are you today?', from: 'Dina', isRead: false, sentAt : 1608701273428 },
+        { id: 'i104',  subject: 'Wassap?', body: 'Pick up!', from: 'Dina', isRead: false, sentAt : 1551133930594 }
     ];
     return mails;
 }
@@ -41,10 +42,6 @@ function _getDemoMails() {
 function query() {
     return Promise.resolve(gMails);
 }
-
-// function addMailToView(){
-
-// }
 
 function remove(mailId) {
     gMails = gMails.filter(mail => mail.id !== mailId);
@@ -60,12 +57,14 @@ function save(mail) {
     }
 }
 
-function _add(mail) {
+function add(mail) {
+    console.log('enter add function', mail);
     const mailToAdd = {
         id: utilService.makeId(),
         ...mail
     };
     gMails = [mailToAdd, ...gMails];
+    console.log('gMails', gMails);
     _saveMailsToStorage();
     return Promise.resolve(mailToAdd);
 }
@@ -87,12 +86,7 @@ function getById(mailId) {
     return Promise.resolve(mail);
 }
 
-// function getNextPrevPet(petId) {
-//     return {
-//         prevPetId: null,
-//         nextPetId: null
-//     }
-// }
+
 
 
 

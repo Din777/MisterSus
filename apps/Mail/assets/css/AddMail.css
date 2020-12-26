@@ -1,9 +1,10 @@
 .modal {
-    width: 1000px;
+    width: 1300px;
     height: 460px;
-    /* background-color: white; */
+    background-color: white;
     color: black;
     border: 2px solid black;
+    position: absolute;
 }
 
 .modal h1 {
@@ -37,13 +38,14 @@
 
 .modal td input {
     width: 940px;
-    /* padding-bottom: 0px;
-    padding-top: 0px; */
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 textarea {
-    width: 940px;
+    width: 1297px;
     height: 250px;
+    border: none;
 }
 
 .send-btn{
