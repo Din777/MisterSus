@@ -1,42 +1,33 @@
-/* body{
-    color: #4e2d69;
-    background-color: #d9c8d2;
-    
-  
-} */
-
-.about-us{
+.about-us {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* */
-    height: 100vh;
     background-color: #e7cbf5;
     color: rgb(85, 72, 96);
-
 }
 
-h2{
+.about-us h2 {
     font-family: Monoton;
     letter-spacing: 0.01rem;
     word-spacing: 0.05rem;
 }
 
-p{
+.about-us p {
     text-align: center;
     font-family: Lato;
-    margin: 2rem; 
+    margin: 2rem;
 }
 
-.img-container{
+.img-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
     justify-content: space-between;
     align-items: flex-end;
 }
-.img-container img{
+
+.img-container img {
     width: 200px;
     border: 2px solid rgb(85, 72, 96);
 }

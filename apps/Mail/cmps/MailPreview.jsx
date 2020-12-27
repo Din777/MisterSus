@@ -24,7 +24,7 @@ export class MailPreview extends React.Component {
                     <p>From: {this.props.mail.from}</p><p>Subject: {this.props.mail.subject}</p>
                     <p>Date: {this.convertDate(this.props.mail.sentAt)}</p>
                     <p onClick={() => {
-                        onRemove(this.props.mail.id)
+                        this.props.onRemove(this.props.mail.id)
                     }}>🗑</p>
                 </div>
             </Link>

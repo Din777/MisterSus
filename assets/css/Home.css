@@ -1,20 +1,18 @@
-body{
+body {
   margin: 0;
-  
 }
 
-.home-page{
+.home-page {
   font-family: Monoton;
-  letter-spacing: 0.04rem;
+  letter-spacing: 0.1rem;
   word-spacing: 0.2rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    color: lavender;
-    background-image: url('/assets/img/world-big.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;  
-    height: 100vh;  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  color: lavender;
+  background-image: url('/assets/img/world-big.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
-

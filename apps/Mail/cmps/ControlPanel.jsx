@@ -42,13 +42,13 @@ export class ControlPanel extends React.Component {
             {/* <button className="add-btn" onClick={() => { ToggleAddMail() }}>➕<span> Compose</span></button> */}
             <tbody>
                 <tr className={this.state.inboxBgc} onClick={this.onInboxBgcColorChange}>
-                    <td>📥</td><td>Inbox</td>
+                    <td>📥</td><td> Inbox</td>
                 </tr>
                 <tr className={this.state.starredBgc} onClick={this.onStarredBgcColorChange}>
-                    <td>☆</td><td>Starred</td>
+                    <td>☆</td><td> Starred</td>
                 </tr>
                 <tr className={this.state.sentBgc} onClick={this.onSentBgcColorChange}>
-                    <td>📤</td><td>Sent Mail</td>
+                    <td>📤</td><td> Sent Mail</td>
                 </tr>
             </tbody>
         </table >
