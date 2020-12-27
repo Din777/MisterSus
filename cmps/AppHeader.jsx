@@ -1,18 +1,27 @@
-import {eventBusService} from "../Services/eventBusService.js"
+import { eventBusService } from "../Services/eventBusService.js"
+import { utilService } from "../Services/utilService.js"
 
 const { NavLink, withRouter } = ReactRouterDOM
 
 export class AppHeader extends React.Component {
 
-    state={
-        msg:''
+    state = {
+        msg: ''
     }
 
     goToAbout = () => {
         this.props.history.push('/about');
-    }    
+    }
 
-    render(){
+    onToggleClose = () => {
+        utilService.toggleClose()
+    }
+
+    onToggleMenu = () => {
+        utilService.toggleMenu()
+    }
+
+    render() {
         return <header className="app-header">
             <nav>
                 <ul className="clean-list">
@@ -22,13 +31,10 @@ export class AppHeader extends React.Component {
                     <li><NavLink to="/keep">MissKeep</NavLink></li>
                     <li><NavLink to="/books">MissBooks</NavLink></li>
                 </ul>
-                {/* <div className="center">
-                    <h2>MisterSus</h2>
-                    <a className="small" onClick={this.goToAbout}>
-                        Meet the team
-                    </a>
-                </div> */}
+            
             </nav>
+            <div className="mobile-menu-close" onClick={this.onToggleClose} hidden>x</div>
+            <div className="mobile-menu-btn" onClick={this.onToggleMenu}>☰</div>
         </header>
     }
 

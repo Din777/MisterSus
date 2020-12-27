@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    /* background-color: #000000; */
+    /* background-image: url('/assets/img/bright-squares.png'); */
+}
+
+.books-app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* 
+.nav-bar{
+    background-color: #fff;
+    height: 80px;
+    /* max-width: 980px; */
+    /* opacity: 0.68;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}  */
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.links li{
+  
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.links li:hover{
+  background-color: #2384d9;
+}
+
+.clean-list {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    width: 100px;
+    height: 80px;
+}
+
+
+.home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.books-list{
+    margin-top: 2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 300px 300px 300px 300px 300px;
+    grid-gap: 0.7rem;
+   
+}
+
+.books-app>h2{
+    color: lightseagreen;
+}
+
+.books-preview{
+    background-color: rgba(234, 240, 240, 0.495);
+    padding: 1rem;
+    width: 200px;
+    max-height: 275px;
+    text-align: center;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.3rem;
+   
+}
+
+.books-preview>h2{
+    color: blueviolet;
+    font-size: 1rem;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-block-end: 0.4rem;
+}
+
+.books-preview>img{
+    width: 90px;
+    max-height: 120px;
+    object-fit: cover;
+    margin-bottom: 0.3rem;
+}
+
+.books-preview>p{
+    margin: 1rem;
+}
+
+
+.books-preview>button{
+    margin: 0.3rem;
+}
+
+.books-preview>button:hover{
+    cursor: pointer;
+    background-color: lightskyblue;
+}
+
+.book-details{
+    background-color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem;
+}
+
+.book-details>h1{
+    text-transform: capitalize;
+}
+
+.review-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.add-comment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sale{
+    width: 200px;
+    object-fit: cover;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}

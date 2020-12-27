@@ -1,5 +1,7 @@
 export const utilService = {
-    makeId
+    makeId,
+    toggleMenu,
+    toggleClose
 };
 
 function makeId(length = 6) {
@@ -11,4 +13,17 @@ function makeId(length = 6) {
     }
 
     return txt;
+}
+
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-open');
+    document.querySelector('.mobile-menu-close').hidden = !document.querySelector('.mobile-menu-close').hidden;
+    document.querySelector('.mobile-menu-btn').hidden = !document.querySelector('.mobile-menu-btn').hidden;
+}
+
+function toggleClose() {
+    document.querySelector('.mobile-menu-close').hidden = true;
+    document.querySelector('.mobile-menu-btn').hidden = false;
+    document.body.classList.toggle('menu-open');
 }

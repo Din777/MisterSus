@@ -132,8 +132,8 @@ function _getDemoNotes() {
                 txt: "Fullstack Me Baby!"
             },
             style: {
-                backgroundColor: "#000000",
-                color: "#000000"
+                backgroundColor: "#06d6a0",
+                color: "#ef476f"
             }
            
         },

@@ -1,15 +1,14 @@
-.app-header{
+.app-header {
     background-color: #784f83;
     /* background-color: rgb(147, 139, 230); */
-   font-family: Roboto;
+    font-family: Roboto;
+   
     /* opacity: 0.6; */
- 
-   
-   
 }
 
-ul{
+ul {
     /* margin: 0 auto; */
+    max-width: 980px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,8 +22,12 @@ ul{
     padding: 0;
 }
 
+.main-header li {
+    width: 80px;
+    height: 80px;
+}
 
-.app-header li a{
+.app-header li a {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -34,9 +37,101 @@ ul{
     height: 80px;
     cursor: pointer;
     color: rgb(234, 225, 247);
+    font-family: Lato-Regular;
 }
+
 .app-header li a:hover {
     background-color: #e7cbf5;
     color: #784f83;
-   
+}
+
+.mobile-menu-btn {
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+    margin-right: 10px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.mobile-menu-close {
+    color: #ffffff;
+    font-weight: bold;
+    font-family: Lato;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    margin-right: 10px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+
+.screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 60%);
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s;
+}
+
+
+/* HAMBURGER-BUTTON */
+
+@media (max-width: 740px) {
+    body.menu-open .screen {
+        opacity: 1;
+        visibility: visible;
+    }
+    body.menu-open .mobile-menu-close {
+        z-index: 2;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .menu-open .app-header nav {
+        transform: translateY(100px);
+    }
+    .app-header nav{
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        opacity: 0.9;
+        transform: translateY(-100%);
+    }
+    .app-header nav li {
+        opacity: 0.9;
+    }
+
+    .app-header nav li a {
+        width: 100vw;
+        align-items: center;
+        background-color: rgb(243, 206, 249);
+        z-index: 2;
+        font-size: 1.5rem;
+        transition: background-color .3s;
+    }
+
 }
