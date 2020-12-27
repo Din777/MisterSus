@@ -1,17 +1,16 @@
 .keep-app {
     height: 800px;
     text-align: center;
-    /* background-color: #853f6d; */
+    background-color: #e7cbf5;
     height: 100vh;
 }
 
 .notes-list {
+  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 2rem;
-    /* background-color: #853f6d; */
-    
+    grid-template-rows: 1fr 1fr ;
+    grid-gap: 2rem;    
 }
 
 .note-txt {
@@ -23,6 +22,11 @@
     justify-content: center;
     align-items: center;
     color: #4e2d69;
+    margin-bottom: 6rem;
+}
+
+.note-txt h3{
+    font-family: Roboto;
 }
 
 .list-todos {
@@ -33,8 +37,7 @@
 }
 
 .note-item{
-    /* background-color: #d8dde4; */
-    border: 2px solid #4e2d69;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,6 +51,7 @@
     align-items: center;
     flex-direction: column;
     color: #4e2d69;
+    padding-bottom: 6rem;
 }
 
 .btn {
@@ -92,7 +96,8 @@ a {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    background-color: #f5c5c5;
+    background-color: #e7cbf5;
+    margin-bottom: 20px;
 }
 
 .note-input {
@@ -130,24 +135,25 @@ a {
 
 .btn-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: rgb(246, 226, 250);
 }
 
 .pin {
-    color: #f5c5c5
+    color: #e690f4
     /* background-color: #f5c5c5; */
 }
 
  .unpin {
-    color: #191b1b;
+    color: black;
 }
 
 .btn-link a{
     font-size: 1.4rem;
-    color: black;
-    /* border: 1px solid black; */
+    color: rgb(72, 70, 70);
     padding: 0.1rem;
+    font-family: Lato-Regular;
 }
 
 .btn-link a:hover{
