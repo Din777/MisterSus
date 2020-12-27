@@ -2,7 +2,9 @@
     background-color: #784f83;
     /* background-color: rgb(147, 139, 230); */
     font-family: Roboto;
-   
+   display: flex;
+   justify-content: center;
+   align-items: center;
     /* opacity: 0.6; */
 }
 
@@ -38,6 +40,8 @@ ul {
     cursor: pointer;
     color: rgb(234, 225, 247);
     font-family: Lato-Regular;
+    margin-right:40px;
+    margin-left: 40px;
 }
 
 .app-header li a:hover {
